@@ -1,8 +1,12 @@
 
 
-.material-menu-wrapper
+.material-main
 {	
-	background-image: url(../img/bg_pattern_7.jpg); background-size: cover;
+	/* background-image: url(../img/bg_pattern_7.jpg); background-size: cover; 
+	background: #002e4c;
+	background: #01639c; 
+	background-image: linear-gradient(to right,#01639c, #03b1ea);*/
+	background-image: linear-gradient(to right,#01639c, #2196f3);
 }
 
 /**************************************************************
@@ -22,10 +26,10 @@
 		color: #9e9e9e;	}
 	
 	.material-widgets-wrapper .widget a { 
-		color: #1b39a8;	}
+		color: #0D47A1;	}
 
 	.material-widgets-wrapper .widget_search input { 
-		color: #1b39a8;border-color: #ffffff;	}
+		color: #0D47A1;border-color: #ffffff;	}
 	
 	/* menu button */
 	.material-main-menu-button:after,
@@ -122,11 +126,12 @@
 	}
 
 	.material-by-bonfire ul li a { 
-		color: #212121; 
+		color: #ffffff; 
 	}
 
 	.material-by-bonfire ul li a:hover {
-		color: #ec407a; 
+		color: #ffffff; 				/*   menu hover color ##to modify   */
+		background: #ffffff40;
 	}
 
 	.material-by-bonfire ul.sub-menu li a { 
@@ -147,11 +152,11 @@
 	}
 
 		.material-by-bonfire a i { 
-		color: #1b39a8; 
+		color: #ffffff; 
 	}
 
 	.material-by-bonfire a:hover i { 
-		color: #1b39a8; 
+		color: #ffffff; 			/*   menu hover color ##to modify   */
 	}
 
 	.material-by-bonfire ul li.border a { 
