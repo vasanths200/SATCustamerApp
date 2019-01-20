@@ -55,11 +55,7 @@
     </platform>	-->
 	
 	<splash src="splash.png" />
-	<preference name="FadeSplashScreenDuration" value="300" />
-	<preference name="SplashScreenDelay" value="10000" />
-	<preference name="AutoHideSplashScreen" value="false" />
-	<preference name="FadeSplashScreen" value="true" />
-	<preference name="ShowSplashScreen" value="true" />
+	<preference name="SplashScreenDelay" value="5000" />
 
     <engine name="android" spec="^7.1.4" />
     <engine name="ios" spec="^4.5.5" />
