@@ -107,12 +107,14 @@ function onDeviceReady()
 						
 						<ul id="menu-primary-navigation" class="menu">
 							<li class="has-border-bottom">
-								<a href="files_non_auth/login.html"> <i class="fa fa-home"></i> Home</a>
+								<a href="files_non_auth/login.html"> <i class="fa fa-home"></i> Login 1</a>
 							</li>
 							
-							<li id="menu-item-141" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-141">
-								<a href="http://materialdesignblog.com/tools-resources/"><i class="fa fa-cogs"></i> Tools &amp; Resources</a>
+							<li class="has-border-bottom">
+								<a href="files_non_auth/login_1.html"> <i class="fa fa-home"></i> Login 2</a>
 							</li>
+							
+							
 							<li id="menu-item-140" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-140">
 								<a href="http://materialdesignblog.com/themes-templates/"><i class="fa fa-file-code-o"></i> Themes &amp; Templates</a>
 							</li>
@@ -147,6 +149,57 @@ function onDeviceReady()
 		
 <link rel="stylesheet" href="css/main_menu.css?ver=20150226" type="text/css" media="all">
 <script type="text/javascript" src="js/main_menu.js?ver=11"></script>
+
+
+<script>
+	/*	var db = window.sqlitePlugin.openDatabase({
+		  name: 'sat_local.db',
+		  location: 'default',
+		  androidDatabaseProvider: 'system'
+		}); */
+		
+		
+	var databaseHandler = {
+	db: null,
+	createDatabase: function(){
+	
+		this.db = window.openDatabase(
+			"sat_localdb.db",
+			"1.0",
+			"SAT Local DB",
+			1000000);
+			
+		this.db.transaction(
+			function(tx){
+				//Run sql here using tx
+				
+				tx.executeSql(
+					"CREATE TABLE IF NOT EXISTS login_user_info (id INTEGER PRIMARY KEY, property TEXT, value TEXT,updated_at DATETIME )",
+					[],
+					function(tx, results){},
+					function(tx, error){
+						console.log("Error while creating the table: " + error.message);
+					}
+				);
+			},
+			function(error){
+				console.log("Transaction error: " + error.message);
+			},
+			function(){
+				console.log("Create DB transaction completed successfully");
+			}
+		);
+
+	}
+	};
+	
+	jQuery(document).on("ready",function(){
+	alert(2);
+		databaseHandler.createDatabase();
+	});
+		
+		
+</script>
 
 </body>
 </html>
